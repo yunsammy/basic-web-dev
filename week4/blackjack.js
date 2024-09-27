@@ -23,44 +23,46 @@ if (sum === 21) {
 let cardThree = getRandomCardNum();
 sum += cardThree;
 
-if (sum === 21) {
-  console.log("You win");
+function blackjack(playerSum, bankSum) {
+  let isPlayerWin;
+  // 플레이어가 21점 달성하면 블랙잭(즉시 승리)
+  if (playerSum == 21) {
+    isPlayerWin = true;
+  }
+
+  // 플레이어가 21점 초과 -> 패배
+  if (playerSum > 21) {
+    isPlayerWin = false;
+  }
+
+  // 딜러가 21점 초과 -> 승리
+  if (bankSum > 21) {
+    isPlayerWin = true;
+  }
+
+  // 플레이어와 딜러의 카드 합계가 21을 넘으면 Bust(패배)
+  if (playerSum + bankSum > 21) {
+    isPlayerWin = false;
+  }
+
+  if (playerSum === bankSum) {
+    console.log("Draw");
+    return;
+  }
+
+  // 플레이어 패의 숫자가 딜러 크기보다 큰 경우
+  if (playerSum > bankSum) {
+    isPlayerWin = true;
+  }
+
+  if (isPlayerWin) {
+    console.log("You win");
+  } else {
+    console.log("You lost");
+  }
+
   console.log(`your card number sum is ${sum}`);
   console.log(`dealer's card number sum is ${bankSum}`);
-  process.exit();
 }
 
-// 플레이어가 21점 초과
-if (sum > 21) {
-  console.log("You lost");
-  console.log(`your card number sum is ${sum}`);
-  console.log(`dealer's card number sum is ${bankSum}`);
-  process.exit();
-}
-
-// 딜러가 21점 초과
-if (bankSum > 21) {
-  console.log("You win");
-  console.log(`your card number sum is ${sum}`);
-  console.log(`dealer's card number sum is ${bankSum}`);
-  process.exit();
-}
-
-// 플레이어와 딜러의 카드 합계가 21을 넘으면 Bust(패배)
-if (sum + bankSum > 21) {
-  console.log("You lost");
-  console.log(`your card number sum is ${sum}`);
-  console.log(`dealer's card number sum is ${bankSum}`);
-  process.exit();
-}
-
-// 플레이어 패의 숫자가 딜러 크기보다 큰 경우
-if (sum > bankSum) {
-  console.log("You win");
-  console.log(`your card number sum is ${sum}`);
-  console.log(`dealer's card number sum is ${bankSum}`);
-} else {
-  console.log("You lost");
-  console.log(`your card number sum is ${sum}`);
-  console.log(`dealer's card number sum is ${bankSum}`);
-}
+blackjack(sum, bankSum);
