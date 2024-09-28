@@ -32,12 +32,11 @@ let flavorDistribution = transactions.reduce((acc, curr) => {
 }, {});
 
 const flavors = Object.keys(flavorDistribution);
-
-let topSellingFlavor = flavors[0];
-flavors.forEach((flavor) => {
-  if (flavorDistribution[flavor] > flavorDistribution[topSellingFlavor]) {
-    topSellingFlavor = flavor;
+let topSellingFlavor = flavors.reduce((maxSellingFlavor, flavor) => {
+  if (flavorDistribution[flavor] > flavorDistribution[maxSellingFlavor]) {
+    return flavor;
   }
+  return maxSellingFlavor;
 });
 
 console.log(flavorDistribution);
