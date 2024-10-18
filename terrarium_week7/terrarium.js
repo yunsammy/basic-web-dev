@@ -1,12 +1,13 @@
+let maxZIndex = 2;
+
 function dragElement(terrariumElement) {
   let pos1 = 0,
     pos2 = 0,
     pos3 = 0,
     pos4 = 0;
 
-  let maxZIndex = 2;
-
   terrariumElement.onpointerdown = pointerDrag;
+  terrariumElement.ondblclick = elementDbClick;
   function pointerDrag(e) {
     e.preventDefault();
     console.log(e);
@@ -31,11 +32,7 @@ function dragElement(terrariumElement) {
     document.onpointermove = null;
   }
 
-  terrariumElement.ondblclick = elementDbClick;
   function elementDbClick(e) {
-    terrariumElements.forEach((terrariumElement) => {
-      terrariumElement.style.zIndex = maxZIndex;
-    });
     maxZIndex += 1;
     terrariumElement.style.zIndex = maxZIndex;
   }
@@ -44,9 +41,5 @@ function dragElement(terrariumElement) {
 const terrariumElements = [];
 for (let i = 1; i < 15; i++) {
   let terrariumElement = document.getElementById(`plant${i}`);
-  terrariumElements.push(terrariumElement);
-}
-
-terrariumElements.forEach((terrariumElement) => {
   dragElement(terrariumElement);
-});
+}
