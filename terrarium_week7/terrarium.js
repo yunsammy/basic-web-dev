@@ -8,7 +8,6 @@ function dragElement(terrariumElement) {
 
   terrariumElement.onpointerdown = pointerDrag;
   terrariumElement.ondblclick = elementDbClick;
-
   function pointerDrag(e) {
     e.preventDefault();
     console.log(e);
