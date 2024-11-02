@@ -1,0 +1,106 @@
+body.container {
+  display: flex;
+  flex-direction: column;
+
+  width: 310px;
+  height: 526px;
+  padding: 20px;
+}
+
+img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+h1 {
+  margin-top: 30px;
+  font-size: 23px;
+  text-align: center;
+}
+
+h2 {
+  margin-top: 5px;
+  font-size: 21px;
+  text-align: center;
+}
+
+input {
+  border: none;
+  background-color: #f0f0f0;
+  outline: none;
+  border-radius: 5px;
+}
+
+button {
+  display: inline-block;
+  background-color: #0a5cd0;
+  font-size: 17px;
+  color: white;
+  border: none;
+  padding: 6px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: darkblue;
+}
+
+#region-container {
+  text-align: center;
+  margin-top: 9px;
+}
+
+#region-container > label {
+  display: block;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+#region {
+  width: 60%;
+  height: 35px;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+
+#api-container {
+  text-align: center;
+  margin-top: 7px;
+}
+
+#api-container > label {
+  display: block;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+#api {
+  width: 60%;
+  height: 35px;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+
+#button-container {
+  text-align: center;
+}
+
+.container {
+  background: black;
+  color: white;
+}
+
+@media (prefers-color-scheme: light) {
+  .container {
+    background: white;
+    color: black;
+  }
+
+  input {
+    background-color: #f0f0f0;
+  }
+}
