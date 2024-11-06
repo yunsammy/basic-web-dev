@@ -18,13 +18,6 @@ const messageElement = document.getElementById("message");
 const typedValueElement = document.getElementById("typed-value");
 const startButtonElement = document.getElementById("start");
 
-startEventListener = startButtonElement.addEventListener(
-  "click",
-  startListener
-);
-
-startEventListener.removeEventListener();
-
 function startListener() {
   // 현재 등록되어 있는 start 버튼 클릭 이벤트 리스너 제거
   startButtonElement.removeEventListener("click", startListener);
@@ -74,3 +67,5 @@ function inputListener() {
     typedValueElement.className = "error";
   }
 }
+
+startButtonElement.addEventListener("click", startListener);
