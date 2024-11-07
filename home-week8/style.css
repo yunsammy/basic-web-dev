@@ -71,10 +71,14 @@ button:active {
 }
 
 .highlight {
-  background-color: #ffff99;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #67e67a;
   padding: 2px 5px;
   border-radius: 3px;
-  transition: background-color 0.3s ease;
+  font-size: 1.5em;
+  color: #671985;
+  transition: background-color 0.3s ease, font-size 0.7s ease;
 }
 
 .error {
