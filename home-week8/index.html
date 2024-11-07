@@ -5,13 +5,12 @@
   </head>
   <body>
     <div id="game-container">
-      <h1>Typing game!</h1>
+      <h1 id="title">Typing game!</h1>
       <p id="info">
         Practice your typing skills with a quote from Sherlock Holmes. Click
         **start** to begin!
       </p>
       <p id="quote"></p>
-      <p id="message"></p>
       <di id="input-container">
         <input
           type="text"
@@ -22,6 +21,13 @@
         <button type="button" id="start">Start</button>
       </div>
     </div>
+    <!-- 모달창을 위한 dialog 태그 추가 -->
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog -->
+    <dialog id="result-dialog">
+      <h2>게임 결과</h2>
+      <p id="result-message"></p>
+      <button id="restart-button">다시 시작하기</button>
+    </dialog>
     <script src="script.js"></script>
   </body>
 </html>

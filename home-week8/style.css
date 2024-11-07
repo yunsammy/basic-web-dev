@@ -9,6 +9,7 @@ body {
 
 h1 {
   font-size: 5em;
+  max-width: 80%;
   color: #333;
   text-transform: uppercase;
   letter-spacing: 10px;
@@ -45,7 +46,7 @@ h1 {
 }
 
 #input-container {
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -54,6 +55,7 @@ h1 {
 
 #typed-value {
   flex-grow: 1;
+  display: none;
   font-size: 1.2em;
   padding: 10px;
   border: 2px solid #ccc;
@@ -78,6 +80,7 @@ button {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.4s ease;
+  box-shadow: 5px 5px 10px rgba(76, 175, 80, 0.5);
 }
 
 button:hover {
@@ -113,4 +116,35 @@ button:active {
   color: #777;
   margin-top: 10px;
   opacity: 0.8;
+}
+
+dialog {
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 500px;
+  width: 80%;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+::backdrop {
+  background-image: url("./images/confetti.jpg");
+  opacity: 0.9;
+}
+
+#restart-button {
+  margin-top: 20px;
+  font-size: 1em;
+  width: 50%;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#restart-button:hover {
+  background-color: #45a049;
 }
