@@ -1,7 +1,8 @@
 const quotes = [
+  "hi",
   // "When you have eliminated the impossible, whatever remains, however improbable, must be the truth.",
   // "There is nothing more deceptive than an obvious fact.",
-  "I thought to know by this time that when a fact appears to be opposed to a long train of deductions it invariably proves to be capable of bearing some other interpretation.",
+  // "I thought to know by this time that when a fact appears to be opposed to a long train of deductions it invariably proves to be capable of bearing some other interpretation.",
   // "I never make exceptions. An exception disproves the rule.",
   // "What one man can invent another can discover.",
   // "Nothing clears up a case so much as stating it to another person.",
@@ -13,16 +14,27 @@ let wordIndex = 0;
 let startTime = Date.now();
 let isGaming = false;
 
+const titleElement = document.getElementById("title");
+const infoElement = document.getElementById("info");
 const quoteElement = document.getElementById("quote");
-const messageElement = document.getElementById("message");
 const typedValueElement = document.getElementById("typed-value");
 const startButtonElement = document.getElementById("start");
+
+const resultDialog = document.getElementById("result-dialog");
+const resultMessage = document.getElementById("result-message");
+const restartButton = document.getElementById("restart-button");
 
 function startListener() {
   // 현재 등록되어 있는 start 버튼 클릭 이벤트 리스너 제거
   startButtonElement.removeEventListener("click", startListener);
   // input 입력 이벤트 리스너 등록
   typedValueElement.addEventListener("input", inputListener);
+
+  titleElement.style.display = "none";
+  infoElement.style.display = "none";
+  typedValueElement.style.display = "block";
+  startButtonElement.style.display = "none";
+
   const quoteIndex = Math.floor(Math.random() * quotes.length);
   const quote = quotes[quoteIndex];
   words = quote.split(" ");
@@ -32,7 +44,6 @@ function startListener() {
   });
   quoteElement.innerHTML = spanWords.join("");
   quoteElement.childNodes[0].className = "highlight";
-  messageElement.innerText = "";
   typedValueElement.disabled = false;
   typedValueElement.value = "";
   typedValueElement.focus();
@@ -46,12 +57,18 @@ function inputListener() {
   if (typedValue === currentWord && wordIndex === words.length - 1) {
     const elapsedTime = new Date().getTime() - startTime;
     quoteElement.childNodes[wordIndex].className = "";
+    titleElement.style.display = "inline";
+    infoElement.style.display = "inline";
+    typedValueElement.style.display = "none";
+    startButtonElement.style.display = "inline";
+    resultDialog.showModal();
     const message = `CONGRATULATIONS! You finished in ${
       elapsedTime / 1000
     } seconds.`;
+    quoteElement.innerText = "";
     typedValueElement.value = "";
     typedValueElement.disabled = true;
-    messageElement.innerText = message;
+    resultMessage.innerText = message;
     // input 입력 이벤트 리스너 제거
     typedValueElement.removeEventListener("input", inputListener);
     // start 버튼 click 이벤트 리스너 등록
@@ -70,4 +87,9 @@ function inputListener() {
   }
 }
 
+function closeModal() {
+  resultDialog.close();
+}
+
 startButtonElement.addEventListener("click", startListener);
+restartButton.addEventListener("click", closeModal);
