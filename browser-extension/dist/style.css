@@ -49,18 +49,20 @@ button:hover {
   background-color: darkblue;
 }
 
-#region-container {
+.region-container {
   text-align: center;
   margin-top: 9px;
 }
 
-#region-container > label {
+.region-container > label {
   display: block;
   font-size: 17px;
   font-weight: bold;
 }
 
-#region {
+#region1,
+#region2,
+#region3 {
   width: 60%;
   height: 35px;
   border-radius: 10px;
@@ -103,4 +105,25 @@ button:hover {
   input {
     background-color: #f0f0f0;
   }
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.region-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
