@@ -24,9 +24,12 @@
     <!-- 모달창을 위한 dialog 태그 추가 -->
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog -->
     <dialog id="result-dialog">
-      <h2>게임 결과</h2>
-      <p id="result-message"></p>
-      <button id="restart-button">다시 시작하기</button>
+      <div id="modal-container">
+        <h2>게임 결과</h2>
+        <p id="max-score"></p>
+        <p id="result-message"></p>
+        <button id="restart-button">다시 시작하기</button>
+      </div>
     </dialog>
     <script src="script.js"></script>
   </body>
