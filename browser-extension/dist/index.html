@@ -18,9 +18,17 @@
       <div>
         <h2>New? Add your Information</h2>
       </div>
-      <div id="region-container">
-        <label for="region">Region Name</label>
-        <input type="text" id="region" required class="region-name" />
+      <div class="region-container">
+        <label for="region1">Region Name1</label>
+        <input type="text" id="region1" required class="region-name" />
+      </div>
+      <div class="region-container">
+        <label for="region2">Region Name2</label>
+        <input type="text" id="region2" required class="region-name" />
+      </div>
+      <div class="region-container">
+        <label for="region3">Region Name3</label>
+        <input type="text" id="region3" required class="region-name" />
       </div>
       <div id="api-container">
         <label for="api">Your API Key from tmrow</label>
@@ -36,15 +44,39 @@
       <div class="errors"></div>
       <div class="data"></div>
       <div class="result-container">
-        <p><strong>Region: </strong><span class="my-region"></span></p>
-        <p><strong>Carbon Usage: </strong><span class="carbon-usage"></span></p>
-        <p>
-          <strong>Fossil Fuel Percentage: </strong
-          ><span class="fossil-fuel"></span>
-        </p>
+        <div class="region-container">
+          <p><strong>Region1: </strong><span class="my-region"></span></p>
+          <p>
+            <strong>Carbon Usage: </strong><span class="carbon-usage"></span>
+          </p>
+          <p>
+            <strong>Fossil Fuel Percentage: </strong
+            ><span class="fossil-fuel"></span>
+          </p>
+        </div>
+        <div class="region-container">
+          <p><strong>Region2: </strong><span class="my-region"></span></p>
+          <p>
+            <strong>Carbon Usage: </strong><span class="carbon-usage"></span>
+          </p>
+          <p>
+            <strong>Fossil Fuel Percentage: </strong
+            ><span class="fossil-fuel"></span>
+          </p>
+        </div>
+        <div class="region-container">
+          <p><strong>Region3: </strong><span class="my-region"></span></p>
+          <p>
+            <strong>Carbon Usage: </strong><span class="carbon-usage"></span>
+          </p>
+          <p>
+            <strong>Fossil Fuel Percentage: </strong
+            ><span class="fossil-fuel"></span>
+          </p>
+        </div>
       </div>
       <button class="clear-btn">Change region</button>
     </div>
-    <script src="../src/index.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
