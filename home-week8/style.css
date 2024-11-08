@@ -70,10 +70,8 @@ h1 {
 }
 
 button {
-  font-size: 1em;
-  width: 10%;
-  margin: 20px;
-  padding: 10px 20px;
+  font-size: 2em;
+  width: 30%;
   background-color: #4caf50;
   color: white;
   border: none;
@@ -103,6 +101,7 @@ button:active {
   color: #003366;
   margin: 0 10px;
   transition: background-color 0.3s ease, font-size 0.2s ease;
+  box-shadow: 0 0 10px rgba(255, 255, 141, 0.5);
 }
 
 .error {
@@ -122,8 +121,8 @@ dialog {
   border: none;
   border-radius: 10px;
   padding: 20px;
-  max-width: 500px;
-  width: 80%;
+  width: 40%;
+  height: 40%;
   text-align: center;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
@@ -131,6 +130,39 @@ dialog {
 ::backdrop {
   background-image: url("./images/confetti.jpg");
   opacity: 0.9;
+}
+
+#modal-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 2em;
+  letter-spacing: 5px;
+}
+
+#max-score,
+#result-message {
+  font-family: "Montserrat", "Roboto", Arial, sans-serif;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+#max-score {
+  font-size: 2em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+#result-message {
+  font-size: 1.5em;
+  font-style: italic;
+  color: #555;
 }
 
 #restart-button {
@@ -147,4 +179,55 @@ dialog {
 
 #restart-button:hover {
   background-color: #45a049;
+}
+
+.fade-in {
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.correct {
+  animation: correctAnimation 0.5s forwards;
+}
+
+@keyframes correctAnimation {
+  0% {
+    background-color: #a5d6a7;
+    transform: scale(1);
+  }
+  100% {
+    background-color: transparent;
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+.shake {
+  animation: shakeAnimation 0.3s;
+}
+
+@keyframes shakeAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
