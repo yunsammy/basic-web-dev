@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Traceroute Visualization</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>🌍 Traceroute Visualization</h1>
+    </header>
+    <main>
+      <!-- Form Section -->
+      <section id="form-section">
+        <h2>Traceroute to current website!</h2>
+        <form id="traceroute-form">
+          <!-- Continent Selection -->
+          <div class="form-group">
+            <label for="continent">Continent</label>
+            <input
+              type="text"
+              id="continent"
+              placeholder="Enter continent (e.g., Asia)"
+            />
+          </div>
+          <!-- Country Selection -->
+          <div class="form-group">
+            <label for="country"> Country</label>
+            <input
+              type="text"
+              id="country"
+              placeholder="Enter country (e.g., South Korea)"
+            />
+          </div>
+
+          <!-- State Selection -->
+          <div class="form-group">
+            <label for="state">State</label>
+            <input
+              type="text"
+              id="state"
+              placeholder="Enter state (e.g., California)"
+            />
+          </div>
+
+          <!-- City Selection -->
+          <div class="form-group">
+            <label for="city">City</label>
+            <input
+              type="text"
+              id="city"
+              placeholder="Enter city (e.g., Seoul)"
+            />
+          </div>
+
+          <!-- API Key -->
+          <div class="form-group">
+            <label for="api-key">Your API Key from PerfOps</label>
+            <input
+              type="text"
+              id="api-key"
+              placeholder="Enter PerfOps API Key"
+            />
+          </div>
+
+          <button type="submit" id="start-traceroute">Start Traceroute</button>
+        </form>
+      </section>
+
+      <!-- Loading Indicator -->
+      <section id="loading" class="loading-section hidden">
+        <div class="loading-spinner"></div>
+        <p>Running Traceroute... Please wait.</p>
+      </section>
+
+      <!-- Map Section -->
+      <section class="map-section">
+        <div id="map"></div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 Traceroute Visualization</p>
+      <p>Powered by PerfOps & AbstractAPI</p>
+    </footer>
+  </body>
+</html>
